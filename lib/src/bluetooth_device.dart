@@ -112,6 +112,7 @@ class BluetoothDevice {
 
     var result = await FlutterBlue.instance._channel
         .invokeMethod('writeCharacteristic', request.writeToBuffer());
+    print("writeCharacteristic: Got method channel. starting await for methodstream");
 
 //    if (type == CharacteristicWriteType.withoutResponse) {
 //      return result;
