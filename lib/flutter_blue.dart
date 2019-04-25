@@ -10,7 +10,7 @@ import 'package:collection/collection.dart';
 import 'package:convert/convert.dart';
 import 'package:flutter/services.dart';
 import 'package:meta/meta.dart';
-
+import 'dart:io';
 import 'gen/flutterblue.pb.dart' as protos;
 
 part 'src/bluetooth_characteristic.dart';
