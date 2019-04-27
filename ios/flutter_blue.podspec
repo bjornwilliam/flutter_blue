@@ -1,5 +1,5 @@
 #
-# To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
+# To learn more about a Podspec see cz
 #
 Pod::Spec.new do |s|
   s.name             = 'flutter_blue'
@@ -19,7 +19,7 @@ A new flutter plugin project.
   s.framework = 'CoreBluetooth'
 
   #protoc = ENV['PWD'] + '/ios/Pods/!ProtoCompiler/protoc'
-  protoc = "#{PODS_ROOT}/!ProtoCompiler/protoc"
+  protoc = "#(PODS_ROOT)/!ProtoCompiler/protoc"
   objc_out = 'gen'
   proto_in = '../protos'
   s.prepare_command = <<-CMD
