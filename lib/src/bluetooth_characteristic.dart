@@ -3,6 +3,8 @@
 // BSD-style license that can be found in the LICENSE file.
 part of flutter_blue;
 
+import 'dart:io'; show Platform;
+
 class BluetoothCharacteristic {
   final Guid uuid;
   final DeviceIdentifier deviceId;
