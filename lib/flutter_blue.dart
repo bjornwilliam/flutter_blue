@@ -11,6 +11,7 @@ import 'package:convert/convert.dart';
 import 'package:flutter/services.dart';
 import 'package:meta/meta.dart';
 import 'package:rxdart/rxdart.dart';
+import 'dart:io';
 
 import 'gen/flutterblue.pb.dart' as protos;
 
