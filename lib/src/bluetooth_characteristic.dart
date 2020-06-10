@@ -158,14 +158,8 @@ class BluetoothCharacteristic {
         .first
         .then((w) => w.success)
         .then((success) => (!success)
-<<<<<<< HEAD
-        ? throw new Exception('Failed to write the characteristic')
-        : null)
-        .then((_) => _value.add(value))
-=======
             ? throw new Exception('Failed to write the characteristic')
             : null)
->>>>>>> upstreamMaster
         .then((_) => null);
 
   }
