@@ -55,8 +55,6 @@ class BluetoothCharacteristic {
           .map((c) {
         // Update the characteristic with the new values
         _updateDescriptors(c.descriptors);
-//        _value.add(c.lastValue);
-//        print('c.lastValue: ${c.lastValue}');
         return c;
       });
 
@@ -124,7 +122,6 @@ class BluetoothCharacteristic {
         .invokeMethod('writeCharacteristic', request.writeToBuffer());
   if (Platform.isIOS) {
     if (type == CharacteristicWriteType.withoutResponse) {
-      _value.add(value);
       return result;
     }
     else {
@@ -161,9 +158,14 @@ class BluetoothCharacteristic {
         .first
         .then((w) => w.success)
         .then((success) => (!success)
+<<<<<<< HEAD
         ? throw new Exception('Failed to write the characteristic')
         : null)
         .then((_) => _value.add(value))
+=======
+            ? throw new Exception('Failed to write the characteristic')
+            : null)
+>>>>>>> upstreamMaster
         .then((_) => null);
 
   }
@@ -194,9 +196,13 @@ class BluetoothCharacteristic {
         .then((p) => new BluetoothCharacteristic.fromProto(p.characteristic))
         .then((c) {
       _updateDescriptors(c.descriptors);
-      _value.add(c.lastValue);
       return (c.isNotifying == notify);
     });
+  }
+
+  @override
+  String toString() {
+    return 'BluetoothCharacteristic{uuid: $uuid, deviceId: $deviceId, serviceUuid: $serviceUuid, secondaryServiceUuid: $secondaryServiceUuid, properties: $properties, descriptors: $descriptors, value: ${_value?.value}';
   }
 }
 
@@ -238,4 +244,9 @@ class CharacteristicProperties {
         extendedProperties = p.extendedProperties,
         notifyEncryptionRequired = p.notifyEncryptionRequired,
         indicateEncryptionRequired = p.indicateEncryptionRequired;
+
+  @override
+  String toString() {
+    return 'CharacteristicProperties{broadcast: $broadcast, read: $read, writeWithoutResponse: $writeWithoutResponse, write: $write, notify: $notify, indicate: $indicate, authenticatedSignedWrites: $authenticatedSignedWrites, extendedProperties: $extendedProperties, notifyEncryptionRequired: $notifyEncryptionRequired, indicateEncryptionRequired: $indicateEncryptionRequired}';
+  }
 }
